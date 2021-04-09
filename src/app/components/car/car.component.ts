@@ -1,31 +1,55 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from 'src/app/models/car';
-import { CarService } from 'src/app/services/car.service';
+import { CarDetail } from 'src/app/models/carDetail';
+import { CarDetailService } from 'src/app/services/car-detail.service';
 
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
-  styleUrls: ['./car.component.css'],
+  styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
-  cars: Car[] = [];
+
+  cars:CarDetail[]=[];
+  
+  currentCar:CarDetail;
+  nullCar:CarDetail;
   dataLoaded=false;
 
-  constructor(private carService: CarService) {}
+  constructor(private carDetailService:CarDetailService) { }
 
   ngOnInit(): void {
     this.getCars()
-    
   }
 
-  getCars() {
-    this.carService.getCars().subscribe((response) => {
-      this.cars = response.data;
+  getCars(){
+    this.carDetailService.getCarDetails().subscribe(response=>{
+      this.cars=response.data
       this.dataLoaded=true;
-    });
+    })
+
   }
 
- 
+  setCurrentCar(car:CarDetail){
+    this.currentCar=car;
+  }
 
-  
+  getCurrentCarClass(car:CarDetail){
+    if(car == this.currentCar){
+      return "list-group-item  list-group-item-warning"
+    }else{
+      return "list-group-item"
+    }
+  }
+
+  getAllCarsClass(){
+    if(!this.currentCar){
+      return "list-group-item list-group-item-secondary"
+    }else{
+      return "list-group-item"
+    }
+  }
+
+  resetCurrentCar(){
+    this.currentCar=this.nullCar;
+  }
 }

@@ -1,0 +1,16 @@
+
+<div class="row">
+  <h5  routerLink="/cars"  [class]="getAllCarsClass()">Tüm Araçlar</h5><br>
+    <div *ngFor="let carDetail of carDetails"  class="card text-dark bg-light mb-2" style="max-width: 18rem;">
+      <img  src="{{imageBasePath}}{{carDetail.imagePath}}" class="card-img-top" alt="thumbnail" width="100" height="200">
+      <div class="card-body">
+        <h5 class="card-title">{{carDetail.brandName}} {{carDetail.carName}}</h5>
+        <p class="card-text">{{carDetail.description}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Renk: {{carDetail.colorName}} </li>
+        <li class="list-group-item">Model: {{carDetail.modelYear}}</li>
+        <li class="list-group-item">Günlük Fiyat: {{carDetail.dailyPrice}}</li>
+      </ul>
+     </div>
+    </div>

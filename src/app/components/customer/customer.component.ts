@@ -8,6 +8,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 })
 export class CustomerComponent implements OnInit {
   customers: Customer[] = [];
+  currentCustomer: Customer;
 
   constructor(private customerService: CustomerService) {}
 
@@ -19,5 +20,27 @@ export class CustomerComponent implements OnInit {
     this.customerService.getCustomers().subscribe((response) => {
       this.customers = response.data;
     });
+  }
+  setCurrentCustomer(customer:Customer){
+    this.currentCustomer =customer;
+  }
+
+  getCurrentCustomerClass(customer:Customer){
+    if(customer==this.currentCustomer)
+    { 
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item list-group-item-secondary"
+    }
+  }
+  getAllCustomerClass(){
+    if(!this.currentCustomer)
+    { 
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+    }
   }
 }

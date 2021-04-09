@@ -1,3 +1,5 @@
 <ul class="list-group">
-    <li *ngFor="let customer of customers" class="list-group-item">{{customer.companyName}}</li>
+    <h5  routerLink="/cars"  [class]="getAllCustomerClass()">Müşteriler</h5>
+    <li (click) ="setCurrentCustomer(customer)" routerLink="/cars/customer/{{customer.customerId}}" 
+    *ngFor="let customer of customers" [class]="getCurrentCustomerClass(customer)">{{customer.companyName}}</li>
 </ul>
