@@ -10,9 +10,8 @@ import { CarDetailService } from 'src/app/services/car-detail.service';
 export class CarComponent implements OnInit {
 
   cars:CarDetail[]=[];
-  
+  carText = "";
   currentCar:CarDetail;
-  nullCar:CarDetail;
   dataLoaded=false;
 
   constructor(private carDetailService:CarDetailService) { }
@@ -32,7 +31,7 @@ export class CarComponent implements OnInit {
   setCurrentCar(car:CarDetail){
     this.currentCar=car;
   }
-
+  
   getCurrentCarClass(car:CarDetail){
     if(car == this.currentCar){
       return "list-group-item  list-group-item-warning"
@@ -49,7 +48,4 @@ export class CarComponent implements OnInit {
     }
   }
 
-  resetCurrentCar(){
-    this.currentCar=this.nullCar;
-  }
 }

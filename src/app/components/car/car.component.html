@@ -1,18 +1,38 @@
+<div class="row align-items-start">
+ <div class="col">
+  <select class="form-select" aria-label="Modeller">
+    <option selected>Model seçiniz..</option>
+    <option *ngFor="let car of cars" value="1">{{car.brandName}}</option>
+  </select>
+ </div>
+ <div class="col" >
+  <select class="form-select" aria-label="Modeller">
+    <option selected>Renk seçiniz..</option>
+    <option *ngFor="let car of cars" value="1">{{car.colorName}}</option>
+  </select>
+ </div><br><br>
+ <div class="mb-3">
+  <input type="text" [(ngModel)]="carText" class="form-control" id="carText" placeholder="Arama ifadesi giriniz.">
+ </div>
+</div>
+
 <table *ngIf="dataLoaded==true" class="table">
     <thead>
         <tr>
             <th>No</th>
             <th>Marka</th>
+            <th>Model</th>
             <th>Renk</th>
             <th>Açıklama</th>
-            <th>Model</th>
+            <th>Model Yılı</th>
             <th>Günlük Fiyat</th>
         </tr>
     </thead>
-    <tr *ngFor="let car of cars" (click)="setCurrentCar(car)"
-    routerLink="/cars/{{car.carId}}">
+    <tr *ngFor="let car of cars | carPipe:carText" (click)="setCurrentCar(car)"
+    routerLink="/cars/{{car.carId}}"> 
         <td>{{car.carId}}</td>
         <td>{{car.brandName}}</td>
+        <td>{{car.carName}}</td>
         <td>{{car.colorName}}</td>
         <td>{{car.description}}</td>
         <td>{{car.modelYear}}</td>

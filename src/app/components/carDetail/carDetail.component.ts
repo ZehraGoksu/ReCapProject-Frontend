@@ -13,6 +13,8 @@ export class CarDetailComponent implements OnInit {
   carDetails:CarDetail[]=[];
   carImages:CarDetail[]=[];
   car:CarDetail;
+  carText ="";
+  
 
   imageBasePath="https://localhost:44394" 
   dataLoaded=true;
@@ -32,6 +34,9 @@ export class CarDetailComponent implements OnInit {
         this.getCarDetails()
       }
     })
+  }
+  setCurrentCar(car:CarDetail){
+    this.car=car;
   }
 
   getAllCarsClass(){
