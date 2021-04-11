@@ -8,8 +8,11 @@ import { CarComponent } from './components/car/car.component';
 import { CarDetailComponent } from './components/carDetail/carDetail.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
+import { LoginComponent } from './components/login/login.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { RegisterComponent } from './components/register/register.component';
 import { RentalComponent } from './components/rental/rental.component';
+import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
   {path:"" , component:CarComponent},
@@ -27,7 +30,10 @@ const routes: Routes = [
   {path:"brandsAdd/add", pathMatch:"full", component:BrandAddComponent },
   {path:"brandsUpdate/update/:brandId", component:BrandAddComponent},
   {path:"brands", component:BrandListComponent},
-  {path:"colors", component:ColorListComponent}
+  {path:"colors", component:ColorListComponent},
+  {path:"login", component:LoginComponent},
+  {path:"register", component:RegisterComponent},
+  {path:"user", component:UserComponent}
 ];
 
 @NgModule({

@@ -1,36 +1,55 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">RentACar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Anasayfa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
+  <div class="container-fluid">
+   <a class="navbar-brand" routerLink=""> <i class="fa fa-car"></i> Rent A Car</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">
+          <i class="fa fa-home"></i>
+          Anasayfa
+        </a>
+      </li></ul>
+      <ul class="nav justify-content-end" *ngIf="control==true">
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="/login">
+          Giriş Yap
+        </a>
+      </li>
+
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="/register">
+          Kayıt Ol
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="this.checkAdmin()">
+        <a class="nav-link" routerLink="/adminlogin">
+          Admin Giriş
+        </a>
+      </li>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+     </form>
+
+    </ul>
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="checkToEmail()==true">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="badge badge-primary"></span>
+        
+          {{this.user.firstName}} {{this.user.lastName}}</a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a routerLink="/profile"  class="dropdown-item"> Ayarlar</a>
+          <div class="dropdown-divider"></div>
+            <a href="" class="dropdown-item" > Çıkış Yap</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav><br>
