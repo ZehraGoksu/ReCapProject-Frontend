@@ -27,7 +27,8 @@ export class CarComponent implements OnInit {
     })
 
   }
-
+  
+  
   setCurrentCar(car:CarDetail){
     this.currentCar=car;
   }

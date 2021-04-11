@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,12 +13,17 @@ import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { CarDetailComponent } from './components/carDetail/carDetail.component';
+import { PaymentComponent } from './components/payment/payment.component';
 import { ColorPipePipe } from './pipes/color-pipe.pipe';
 import { BrandPipePipe } from './pipes/brand-pipe.pipe';
 import { CarPipePipe } from './pipes/car-pipe.pipe';
 
 import { ToastrModule } from 'ngx-toastr';
-import { PaymentComponent } from './components/payment/payment.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { BrandListComponent } from './components/brand-list/brand-list.component';
+import { ColorListComponent } from './components/color-list/color-list.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +39,18 @@ import { PaymentComponent } from './components/payment/payment.component';
     BrandPipePipe,
     CarPipePipe,
     PaymentComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    ColorAddComponent,
+    BrandListComponent,
+    ColorListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule, 
     ToastrModule.forRoot({
       positionClass:"toast-buttom-right"

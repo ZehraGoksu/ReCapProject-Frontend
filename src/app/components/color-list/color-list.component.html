@@ -1,0 +1,21 @@
+<div class="row">
+    <h5 class="col-md-6">Araç Renk Listesi</h5>
+    <div class="col-md-6">
+        <button style="float:right;" class="btn btn-success col-md-2"  routerLink="/colorsAdd/add" >Renk Ekle </button><br>
+    </div><br>
+</div>
+<table  class="table">
+    <thead>
+        <tr>
+            <th>Renk Adı</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="list-group">
+            <th (click)="setCurrentColor(color)"
+            routerLink="colors/{{color.colorId}}"
+            *ngFor="let color of colors" >{{color.colorName}} <br><button type="button" class="btn btn-success" routerLink="/colorsUpdate/update/{{color.colorId}}">Güncelle</button></th>
+             </tr>
+    </tbody>    
+</table>

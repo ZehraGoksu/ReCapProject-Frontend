@@ -24,4 +24,6 @@ export class PaymentComponent implements OnInit {
       this.toastrService.success("Sepete eklendi", payment.firstLastName) 
     }
   }
+
+  
 }

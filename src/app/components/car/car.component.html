@@ -17,6 +17,7 @@
 </div>
 
 <table *ngIf="dataLoaded==true" class="table">
+ 
     <thead>
         <tr>
             <th>No</th>
@@ -27,15 +28,22 @@
             <th>Model Yılı</th>
             <th>Günlük Fiyat</th>
         </tr>
-    </thead>
-    <tr *ngFor="let car of cars | carPipe:carText" (click)="setCurrentCar(car)"
-    routerLink="/cars/{{car.carId}}"> 
+    </thead><tbody>
+    <tr  (click)="setCurrentCar(car)" *ngFor="let car of cars | carPipe:carText"> 
         <td>{{car.carId}}</td>
         <td>{{car.brandName}}</td>
         <td>{{car.carName}}</td>
         <td>{{car.colorName}}</td>
         <td>{{car.description}}</td>
         <td>{{car.modelYear}}</td>
-        <td>{{car.dailyPrice}} tl</td>
-    </tr>
+        <td>{{car.dailyPrice}}  ₺</td>
+        <td>
+          <button type="button" class="btn btn-success"  routerLink="/cars/brand/{{car.brandId}}" >Detay</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-success" routerLink="/carsUpdate/update/{{car.carId}}">Güncelle</button>
+        </td>
+        
+    </tr></tbody>
+  
 </table>
