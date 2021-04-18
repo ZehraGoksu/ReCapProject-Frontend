@@ -1,39 +1,37 @@
 <div class="container">
     <div class="card">
       <div class="card-top border-bottom text-center">
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-primary" role="alert">
           <h4 class="alert-heading">Ödeme Sayfası</h4>
         </div>
-  
-        <div class="card-body">
+        <div class="card-body" >
           <div class="row">
             <div class="col-md-7">
               <div class="left border">
-                
-                <form>
+                <form  style="padding: 10px;">
                   <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                       <span><b>Kart Üzerindeki İsim:</b></span>
                       <input type="text" id="cardName" name="cardName" placeholder="Ad Soyad" required />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                       <span><b>Kart Numarası:</b></span>
                       <input type="text" id="cardNumber" name="cardNumber"  placeholder="000000000" pattern="(?=.*[0-9]).{8,}" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-4">
-                      <span><b>Son Kullanma Tarihi:</b></span>
+                    <div class="col-6">
+                      <span><b>Son Kullanma Tarihi:</b></span><br>
                       <input type="number"id="cardDateMonth" name="cardDateMonth" placeholder="Ay" required />
                     </div>
-                    <div class="col-4">
-                      <br>
-                      <input type="number" id="cardDateYear" name="cardDateYear" placeholder="Yıl"required />
+                    <br>
+                    <div class="col-6">
+                      <br><input type="number" id="cardDateYear" name="cardDateYear" placeholder="Yıl"required />
                     </div>
                     <div class="row">
-                      <div class="col-4">
+                      <div class="col-6">
                         <span><b>CVV:</b></span>
                         <input type="number"id="cardCvv" name="cardCvv" placeholder="CVV" required />
                       </div>
@@ -43,9 +41,9 @@
               </div>
             </div>
             <div class="col-md-5">
-              <div class="right border">
+              <div class="right border"  style="padding: 10px;">
                 <div class="alert alert-dark" role="alert">
-                  Kiralama Detayı
+                  <b>Kiralama Detayı</b>
                 </div>
                 <div class="row lower">
                   <div class="col text-left">Kiralama Tarihi:</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { CarDetail } from 'src/app/models/carDetail';
 import { CreditCard } from 'src/app/models/creditCard';
 import { PaymentService } from 'src/app/services/payment.service';
 
@@ -11,6 +12,7 @@ import { PaymentService } from 'src/app/services/payment.service';
 export class PaymentComponent implements OnInit {
 
   payment:CreditCard[]=[];
+  carDetails:CarDetail[]=[];
   constructor(private paymentService:PaymentService ,private toastrService:ToastrService) { }
 
   ngOnInit(): void {

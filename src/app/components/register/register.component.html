@@ -1,7 +1,8 @@
+<div class="shadow p-3 mb-5 bg-body rounded" style="padding: 5px;">
 <body class="text-center">
     <main class="form-signin">
       <form [formGroup]="registerForm">
-        <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1>
+        <h1 class="h3 mb-3 fw-normal"><b>Kayıt Ol</b></h1>
   
         <div class="form-floating">
             <input formControlName="firstName" type="text" class="form-control" id="floatingInput" placeholder="Ad">
@@ -23,7 +24,7 @@
           </div>
       
           <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="register()">Kayıt ol</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
       </form>
     </main>
   </body>
+</div>

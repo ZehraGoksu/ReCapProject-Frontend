@@ -1,11 +1,10 @@
   <div class="card mb-3" style="max-width: 1000px;">
-      <h5  routerLink="/cars"  [class]="getAllCarsClass()">Tüm Araçlar</h5><br>
+      <h5  routerLink="/cars"  [class]="getAllCarsClass()">Tüm Araçlar</h5>
       <div class="row g-0" *ngFor="let carDetail of carDetails | carPipe:carText" >
-        <div class="col-md-4" >
-          <img src="{{imageBasePath}}{{carDetail.imagePath}}" alt="thumbnail" width="300" height="200">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body" width="300" height="300">
+        <div>
+          <h5 class="text-primary" style="padding: 10px"><b>{{carDetail.brandName}} {{carDetail.carName}}</b></h5>
+          <img src="{{imageBasePath}}{{carDetail.imagePath}}" alt="thumbnail" width="920" height="500" style="padding: 10px">
+          <div class="card-body" width="800" height="600">
             <h5 class="card-title">{{carDetail.brandName}} {{carDetail.carName}}</h5>
             <p class="card-text"> {{carDetail.description}}</p>
             <p class="card-text"><small class="text-muted"><ul class="list-group list-group-flush">
@@ -18,5 +17,8 @@
             </ul></small></p>
           </div>
         </div>
+        
+         
+        
       </div>
     </div>

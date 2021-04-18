@@ -20,12 +20,9 @@ export class RegisterComponent implements OnInit {
               private router:Router) { }
 
   ngOnInit(): void {
-    this.load();
-  }
-
-  load(){
     this.createRegisterForm();
   }
+
 
   createRegisterForm(){
     this.registerForm = this.formBuilder.group({
